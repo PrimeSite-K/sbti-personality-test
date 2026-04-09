@@ -15,7 +15,7 @@ const AD_SLOTS = {
 const MEDIA_NET_CID = 'CID_PLACEHOLDER'
 const MEDIA_NET_CRID = 'CRID_PLACEHOLDER'
 
-// Google AdSense 初始化
+// Google AdSense 初始化 - 必须在 head 中加载
 export default function GoogleAdSense() {
   return (
     <>
@@ -23,7 +23,7 @@ export default function GoogleAdSense() {
         async
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
         crossOrigin="anonymous"
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
       />
     </>
   )
