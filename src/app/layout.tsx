@@ -25,8 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <Providers>
-      {/* Google AdSense */}
-      <GoogleAdSense />
+      {/* Google AdSense - 在 head 中 */}
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9770495539213779"
+        crossOrigin="anonymous"
+      />
       {/* Media.net */}
       <MediaNetScript />
       {children}
