@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Script from 'next/script'
 
 // Google AdSense 发布商 ID
-const ADSENSE_CLIENT_ID = 'ca-pub-XXXXXXXXXXXXXXXX'
+const ADSENSE_CLIENT_ID = 'ca-pub-9422527522602192'
 
 // Media.net 配置 (申请后填入)
 const MEDIA_NET_CID = 'CID_PLACEHOLDER'
