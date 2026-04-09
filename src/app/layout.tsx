@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   title: 'SBTI Personality Test - Explore Your Inner World',
   description: 'Discover your unique personality type with our comprehensive 30-question assessment. 27 personality types, 5 language support.',
   keywords: 'SBTI, personality test, psychology, self-discovery, MBTI alternative',
+  verification: {
+    google: 'google-site-verification-code', // 如有需要填入
+  },
+  other: {
+    'google-adsense-account': 'ca-pub-9770495539213779',
+  },
 }
 
 export default function RootLayout({
