@@ -178,7 +178,7 @@ export default function ResultPage({ typeCode, personalityTypes, answers, questi
 
         {/* 广告位 */}
         <div className="mt-8 mb-4">
-          <AdBanner slot="1122334455" format="horizontal" />
+          <AdBanner format="horizontal" />
         </div>
 
         {/* 所有人格类型 */}

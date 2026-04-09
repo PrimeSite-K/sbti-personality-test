@@ -6,7 +6,12 @@ import Script from 'next/script'
 // Google AdSense 发布商 ID
 const ADSENSE_CLIENT_ID = 'ca-pub-9770495539213779'
 
-// Media.net 配置 (申请后填入)
+// 广告单元 ID
+const AD_SLOTS = {
+  homeInfeed: '7998650296',    // 首页信息流
+  homeBanner: '7998650296',    // 首页横幅
+  resultBanner: '7998650296',  // 结果页横幅
+}
 const MEDIA_NET_CID = 'CID_PLACEHOLDER'
 const MEDIA_NET_CRID = 'CRID_PLACEHOLDER'
 
@@ -43,38 +48,40 @@ export function MediaNetScript() {
 // ============ Google AdSense 广告组件 ============
 
 export function AdSenseBanner({ slot, format = 'auto' }: {
-  slot: string
+  slot?: string
   format?: 'auto' | 'horizontal' | 'vertical' | 'rectangle'
 }) {
+  const adSlot = slot || AD_SLOTS.homeBanner
   return (
     <div className="ad-container my-4">
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
         data-ad-client={ADSENSE_CLIENT_ID}
-        data-ad-slot={slot}
+        data-ad-slot={adSlot}
         data-ad-format={format}
         data-full-width-responsive="true"
       />
-      <Script id={`adsense-${slot}`} strategy="afterInteractive">
+      <Script id={`adsense-${adSlot}`} strategy="afterInteractive">
         {`(adsbygoogle = window.adsbygoogle || []).push({});`}
       </Script>
     </div>
   )
 }
 
-export function AdSenseInFeed({ slot }: { slot: string }) {
+export function AdSenseInFeed({ slot }: { slot?: string }) {
+  const adSlot = slot || AD_SLOTS.homeInfeed
   return (
     <div className="ad-infeed my-6">
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
         data-ad-client={ADSENSE_CLIENT_ID}
-        data-ad-slot={slot}
+        data-ad-slot={adSlot}
         data-ad-format="fluid"
         data-ad-layout="in-article"
       />
-      <Script id={`adsense-infeed-${slot}`} strategy="afterInteractive">
+      <Script id={`adsense-infeed-${adSlot}`} strategy="afterInteractive">
         {`(adsbygoogle = window.adsbygoogle || []).push({});`}
       </Script>
     </div>

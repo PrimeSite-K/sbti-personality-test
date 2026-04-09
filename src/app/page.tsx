@@ -180,11 +180,7 @@ export default function Home() {
                 
                 {/* 广告位 - 信息流广告 (Google + Media.net) */}
                 <div className="col-span-full">
-                  <SmartAd 
-                    adsenseSlot="1234567890" 
-                    type="infeed"
-                    showMediaNet={true}
-                  />
+                  <SmartAd type="infeed" showMediaNet={false} />
                 </div>
                 {[
                   { title: '科学评估', desc: '基于心理学的多维度分析', icon: '🔬' },
@@ -231,7 +227,7 @@ export default function Home() {
 
         {/* 底部广告横幅 */}
         <div className="max-w-4xl mx-auto mt-12">
-          <AdBanner slot="0987654321" format="horizontal" />
+          <AdBanner format="horizontal" />
         </div>
       </div>
     </main>
