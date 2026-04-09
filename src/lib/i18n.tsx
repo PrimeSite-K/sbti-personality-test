@@ -193,9 +193,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('sbti-locale', newLocale)
   }
 
+  // 在服务端渲染时使用默认翻译
   const t = (key: string, params?: Record<string, string | number>): string => {
     const keys = key.split('.')
-    let value: any = translations[locale]
+    // 使用当前 locale 或默认 'en'
+    const currentLocale = mounted ? locale : 'en'
+    let value: any = translations[currentLocale]
     
     for (const k of keys) {
       if (value && typeof value === 'object') {
@@ -216,17 +219,9 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     return value
   }
 
-  // 避免水合不匹配
-  if (!mounted) {
-    return (
-      <I18nContext.Provider value={{ locale: 'en', setLocale, t }}>
-        {children}
-      </I18nContext.Provider>
-    )
-  }
-
+  // 避免 SSR 和客户端不匹配，使用默认语言渲染
   return (
-    <I18nContext.Provider value={{ locale, setLocale, t }}>
+    <I18nContext.Provider value={{ locale: mounted ? locale : 'en', setLocale, t }}>
       {children}
     </I18nContext.Provider>
   )
