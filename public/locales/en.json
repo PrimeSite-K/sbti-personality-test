@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "name": "English",
+    "nativeName": "English",
+    "code": "en"
+  },
+  "ui": {
+    "title": "SBTI Personality Test",
+    "subtitle": "Explore Your Inner World",
+    "startTest": "Start Test",
+    "nextQuestion": "Next",
+    "prevQuestion": "Previous",
+    "viewResult": "View Result",
+    "retake": "Retake Test",
+    "share": "Share Result",
+    "dimensions": "Dimension Analysis",
+    "yourType": "Your Personality Type",
+    "description": "Description",
+    "progress": "Progress",
+    "question": "Question {{current}} of {{total}}"
+  },
+  "dimensions": {
+    "S": {
+      "name": "Self",
+      "description": "Self-perception and self-worth"
+    },
+    "S1": { "name": "Self-Worth", "description": "Evaluation of self-value" },
+    "S2": { "name": "Self-Awareness", "description": "Understanding of true self" },
+    "S3": { "name": "Self-Drive", "description": "Internal drive vs external validation" },
+    "E": {
+      "name": "Emotion",
+      "description": "Emotional expression and attachment"
+    },
+    "E1": { "name": "Security", "description": "Sense of security in relationships" },
+    "E2": { "name": "Emotional Investment", "description": "Depth of emotional commitment" },
+    "E3": { "name": "Personal Space", "description": "Need for personal space" },
+    "A": {
+      "name": "Attitude",
+      "description": "Basic attitude toward the world"
+    },
+    "A1": { "name": "Trust", "description": "Trust in others' goodwill" },
+    "A2": { "name": "Conformity", "description": "Following rules vs breaking norms" },
+    "A3": { "name": "Purpose", "description": "Perception of life's meaning" },
+    "Ac": {
+      "name": "Action",
+      "description": "Execution and decision-making style"
+    },
+    "Ac1": { "name": "Achievement", "description": "Pursuing results vs avoiding risks" },
+    "Ac2": { "name": "Decisiveness", "description": "Decision-making speed" },
+    "Ac3": { "name": "Planning", "description": "Level of planning in actions" },
+    "So": {
+      "name": "Social",
+      "description": "Interpersonal interaction patterns"
+    },
+    "So1": { "name": "Openness", "description": "Attitude toward new social connections" },
+    "So2": { "name": "Intimacy", "description": "Need for close relationships" },
+    "So3": { "name": "Authenticity", "description": "Consistency across different contexts" }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "name": "中文",
+    "nativeName": "中文",
+    "code": "zh"
+  },
+  "ui": {
+    "title": "SBTI 人格测试",
+    "subtitle": "探索你的内心世界",
+    "startTest": "开始测试",
+    "nextQuestion": "下一题",
+    "prevQuestion": "上一题",
+    "viewResult": "查看结果",
+    "retake": "重新测试",
+    "share": "分享结果",
+    "dimensions": "维度分析",
+    "yourType": "你的人格类型",
+    "description": "详细描述",
+    "progress": "进度",
+    "question": "第 {{current}} 题 / 共 {{total}} 题"
+  },
+  "dimensions": {
+    "S": {
+      "name": "自我",
+      "description": "自我认知与自我价值"
+    },
+    "S1": { "name": "自我价值", "description": "对自我价值的评估" },
+    "S2": { "name": "自我认知", "description": "对真实自我的了解" },
+    "S3": { "name": "自我驱动", "description": "内在动力与外在评价" },
+    "E": {
+      "name": "情感",
+      "description": "情感表达与依恋模式"
+    },
+    "E1": { "name": "安全感", "description": "关系中的安全感程度" },
+    "E2": { "name": "情感投入", "description": "对感情的认真程度" },
+    "E3": { "name": "独立空间", "description": "对个人空间的需求" },
+    "A": {
+      "name": "态度",
+      "description": "对世界的基本态度"
+    },
+    "A1": { "name": "信任度", "description": "对他人善意的信任" },
+    "A2": { "name": "规则性", "description": "遵守规则与打破常规" },
+    "A3": { "name": "目标感", "description": "人生意义的认知" },
+    "Ac": {
+      "name": "行动",
+      "description": "执行与决策方式"
+    },
+    "Ac1": { "name": "成就导向", "description": "追求成果vs规避风险" },
+    "Ac2": { "name": "果断性", "description": "决策的果断程度" },
+    "Ac3": { "name": "计划性", "description": "做事的计划程度" },
+    "So": {
+      "name": "社交",
+      "description": "人际交往模式"
+    },
+    "So1": { "name": "开放性", "description": "对新社交的态度" },
+    "So2": { "name": "亲密度", "description": "对亲密关系的需求" },
+    "So3": { "name": "真实性", "description": "在不同场合的表现一致性" }
+  }
+}

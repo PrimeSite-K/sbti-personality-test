@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "name": "Japanese",
+    "nativeName": "日本語",
+    "code": "ja"
+  },
+  "ui": {
+    "title": "SBTI 性格診断",
+    "subtitle": "あなたの内面世界を探求",
+    "startTest": "診断を始める",
+    "nextQuestion": "次へ",
+    "prevQuestion": "前へ",
+    "viewResult": "結果を見る",
+    "retake": "やり直す",
+    "share": "結果をシェア",
+    "dimensions": "次元分析",
+    "yourType": "あなたの性格タイプ",
+    "description": "詳細説明",
+    "progress": "進捗",
+    "question": "第 {{current}} 問 / 全 {{total}} 問"
+  },
+  "dimensions": {
+    "S": {
+      "name": "自己",
+      "description": "自己認識と自己価値"
+    },
+    "S1": { "name": "自己価値", "description": "自己価値の評価" },
+    "S2": { "name": "自己認識", "description": "真の自己の理解" },
+    "S3": { "name": "自己駆動", "description": "内発的動機づけと外発的評価" },
+    "E": {
+      "name": "感情",
+      "description": "感情表現と愛着スタイル"
+    },
+    "E1": { "name": "安心感", "description": "関係における安心感" },
+    "E2": { "name": "感情投資", "description": "感情への没頭度" },
+    "E3": { "name": "個人空間", "description": "個人空間への欲求" },
+    "A": {
+      "name": "態度",
+      "description": "世界に対する基本的態度"
+    },
+    "A1": { "name": "信頼", "description": "他者の善意への信頼" },
+    "A2": { "name": "規範性", "description": "ルール遵守と規範打破" },
+    "A3": { "name": "目的", "description": "人生の意味の認識" },
+    "Ac": {
+      "name": "行動",
+      "description": "実行と意思決定スタイル"
+    },
+    "Ac1": { "name": "達成", "description": "成果追求とリスク回避" },
+    "Ac2": { "name": "決断力", "description": "意思決定の速さ" },
+    "Ac3": { "name": "計画性", "description": "行動の計画レベル" },
+    "So": {
+      "name": "社交",
+      "description": "対人関係パターン"
+    },
+    "So1": { "name": "開放性", "description": "新しい社会的つながりへの態度" },
+    "So2": { "name": "親密さ", "description": "親密な関係への欲求" },
+    "So3": { "name": "真実性", "description": "異なる場面での一貫性" }
+  }
+}
