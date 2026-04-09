@@ -1,0 +1,71 @@
+/* 广告样式 */
+.ad-container {
+  min-height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, rgba(30, 27, 75, 0.3) 0%, rgba(15, 23, 42, 0.5) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  overflow: hidden;
+}
+
+.ad-container ins {
+  width: 100%;
+  min-height: 90px;
+}
+
+.ad-infeed {
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, rgba(30, 27, 75, 0.3) 0%, rgba(15, 23, 42, 0.5) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  overflow: hidden;
+}
+
+.ad-infeed ins {
+  width: 100%;
+  min-height: 120px;
+}
+
+.ad-sidebar {
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, rgba(30, 27, 75, 0.3) 0%, rgba(15, 23, 42, 0.5) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  overflow: hidden;
+}
+
+/* 广告占位符 - 在广告加载前显示 */
+.ad-container::before,
+.ad-infeed::before,
+.ad-sidebar::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(99, 102, 241, 0.03) 10px,
+    rgba(99, 102, 241, 0.03) 20px
+  );
+}
+
+/* 响应式广告 */
+@media (max-width: 768px) {
+  .ad-container {
+    min-height: 100px;
+  }
+  
+  .ad-sidebar {
+    display: none;
+  }
+}

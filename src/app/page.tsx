@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import TestPage from '@/components/TestPage'
 import ResultPage from '@/components/ResultPage'
+import { AdBanner, AdInFeed } from '@/components/AdSense'
 import { useTranslation } from '@/lib/i18n'
 import questions from '@/data/questions.json'
 import personalityTypes from '@/data/personality-types.json'
@@ -176,6 +177,11 @@ export default function Home() {
 
               {/* 底部功能卡片 */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
+                
+                {/* 广告位 - 信息流广告 */}
+                <div className="col-span-full">
+                  <AdInFeed slot="1234567890" />
+                </div>
                 {[
                   { title: '科学评估', desc: '基于心理学的多维度分析', icon: '🔬' },
                   { title: '深度洞察', desc: '发现隐藏的人格特质', icon: '💡' },
@@ -218,6 +224,11 @@ export default function Home() {
             />
           )}
         </AnimatePresence>
+
+        {/* 底部广告横幅 */}
+        <div className="max-w-4xl mx-auto mt-12">
+          <AdBanner slot="0987654321" format="horizontal" />
+        </div>
       </div>
     </main>
   )

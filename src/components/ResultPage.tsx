@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts'
+import { AdBanner } from './AdSense'
 import { useTranslation } from '@/lib/i18n'
 
 interface ResultPageProps {
@@ -173,6 +174,11 @@ export default function ResultPage({ typeCode, personalityTypes, answers, questi
           >
             {t('share')} 📤
           </motion.button>
+        </div>
+
+        {/* 广告位 */}
+        <div className="mt-8 mb-4">
+          <AdBanner slot="1122334455" format="horizontal" />
         </div>
 
         {/* 所有人格类型 */}
