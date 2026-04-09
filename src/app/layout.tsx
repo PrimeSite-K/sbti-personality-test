@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Providers from './providers'
-import GoogleAdSense from '@/components/AdSense'
+import GoogleAdSense, { MediaNetScript } from '@/components/AdSense'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +21,8 @@ export default function RootLayout({
     <Providers>
       {/* Google AdSense */}
       <GoogleAdSense />
+      {/* Media.net */}
+      <MediaNetScript />
       {children}
     </Providers>
   )

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import TestPage from '@/components/TestPage'
 import ResultPage from '@/components/ResultPage'
-import { AdBanner, AdInFeed } from '@/components/AdSense'
+import { AdBanner, AdInFeed, SmartAd } from '@/components/AdSense'
 import { useTranslation } from '@/lib/i18n'
 import questions from '@/data/questions.json'
 import personalityTypes from '@/data/personality-types.json'
@@ -178,9 +178,13 @@ export default function Home() {
               {/* 底部功能卡片 */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
                 
-                {/* 广告位 - 信息流广告 */}
+                {/* 广告位 - 信息流广告 (Google + Media.net) */}
                 <div className="col-span-full">
-                  <AdInFeed slot="1234567890" />
+                  <SmartAd 
+                    adsenseSlot="1234567890" 
+                    type="infeed"
+                    showMediaNet={true}
+                  />
                 </div>
                 {[
                   { title: '科学评估', desc: '基于心理学的多维度分析', icon: '🔬' },
