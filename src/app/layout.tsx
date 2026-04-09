@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Providers from './providers'
-import GoogleAdSense, { MediaNetScript } from '@/components/AdSense'
+import { MediaNetScript } from '@/components/AdSense'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Discover your unique personality type with our comprehensive 30-question assessment. 27 personality types, 5 language support.',
   keywords: 'SBTI, personality test, psychology, self-discovery, MBTI alternative',
   verification: {
-    google: 'google-site-verification-code', // 如有需要填入
+    google: 'google-site-verification-code',
   },
   other: {
     'google-adsense-account': 'ca-pub-9770495539213779',
@@ -24,16 +24,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <Providers>
-      {/* Google AdSense - 在 head 中 */}
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9770495539213779"
-        crossOrigin="anonymous"
-      />
-      {/* Media.net */}
-      <MediaNetScript />
-      {children}
-    </Providers>
+    <html lang="en">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9770495539213779"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className={`${inter.className} min-h-screen bg-dark-500 text-white`}>
+        <Providers>
+          <div className="grid-background min-h-screen">
+            <MediaNetScript />
+            {children}
+          </div>
+        </Providers>
+      </body>
+    </html>
   )
 }
