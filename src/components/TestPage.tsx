@@ -107,15 +107,11 @@ export default function TestPage({ questions, onComplete, onBack }: TestPageProp
           {/* 选项 */}
           <div className="space-y-3">
             {currentQuestion?.options.map((option, i) => (
-              <motion.button
+              <button
                 key={option.value}
+                type="button"
                 onClick={() => handleSelect(option.value)}
                 className={`option-card w-full text-left ${isSelected(option.value) ? 'selected' : ''}`}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1 }}
               >
                 <div className="flex items-start gap-3">
                   <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold
@@ -127,7 +123,7 @@ export default function TestPage({ questions, onComplete, onBack }: TestPageProp
                   </span>
                   <span className="flex-1 pt-1">{option.label}</span>
                 </div>
-              </motion.button>
+              </button>
             ))}
           </div>
         </motion.div>

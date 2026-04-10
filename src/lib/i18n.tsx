@@ -204,6 +204,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       if (value && typeof value === 'object') {
         value = value[k]
       } else {
+        // 如果找不到翻译，返回格式化的 key
+        if (key === 'question' && params) {
+          return `Question ${params.current} of ${params.total}`
+        }
         return key
       }
     }

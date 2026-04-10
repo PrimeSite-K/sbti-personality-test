@@ -55,8 +55,9 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen">
-      <div className="particles-bg">
-        {[...Array(20)].map((_, i) => (
+      {/* 背景粒子效果 - 不阻挡交互 */}
+      <div className="particles-bg pointer-events-none">
+        {[...Array(15)].map((_, i) => (
           <div key={i} className="particle" style={{
             left: `${Math.random() * 100}%`,
             animationDelay: `${Math.random() * 15}s`,
@@ -65,6 +66,7 @@ export default function Home() {
         ))}
       </div>
 
+      {/* 导航栏 */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass-card rounded-none border-t-0 border-x-0">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <motion.h1 className="text-xl font-bold glow-text cursor-pointer" onClick={() => setStage('home')}>
@@ -74,7 +76,8 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className="pt-20 pb-10 px-6">
+      {/* 主内容区 - 确保 z-index 高于背景 */}
+      <div className="relative z-10 pt-20 pb-10 px-6">
         <AnimatePresence mode="wait">
           {stage === 'home' && (
             <motion.div key="home" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="max-w-4xl mx-auto">
