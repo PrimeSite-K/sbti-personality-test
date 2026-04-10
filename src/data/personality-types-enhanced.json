@@ -1,0 +1,292 @@
+{
+  "CTRL": {
+    "code": "CTRL",
+    "cn": "拿捏者",
+    "intro": "怎么样，被我拿捏了吧？",
+    "desc": "恭喜您，您测出了全中国最为罕见的人格，您是宇宙熵增定律的天然反对者！全世界所谓成功人士里，99.99%都是您的拙劣模仿者。CTRL人格，是行走的人形自走任务管理器，普通人眼中的「规则」，在您这里只是出厂的基础参数设置；凡人所谓的「计划」，对您而言不过是心血来潮的随手涂鸦。",
+    "traits": ["控制欲强", "计划完美", "执行力爆表", "目标导向"],
+    "strengths": {
+      "en": ["Exceptional planning abilities", "Strong leadership skills", "Highly organized", "Goal-oriented mindset", "Decisive under pressure"],
+      "zh": ["卓越的计划能力", "强大的领导才能", "高度有条理", "目标导向思维", "压力下果断决策"]
+    },
+    "weaknesses": {
+      "en": ["May be perceived as controlling", "Difficulty delegating tasks", "Perfectionist tendencies", "Low tolerance for unpredictability"],
+      "zh": ["可能被视为控制欲强", "难以授权他人", "完美主义倾向", "对不可预测性容忍度低"]
+    },
+    "careers": {
+      "en": ["CEO/Executive", "Project Manager", "Operations Director", "Strategic Consultant", "Systems Architect"],
+      "zh": ["CEO/高管", "项目经理", "运营总监", "战略顾问", "系统架构师"]
+    },
+    "relationships": {
+      "en": "In relationships, CTRL types need partners who appreciate structure and clear communication. They thrive with individuals who are comfortable with planning and don't mind a more organized approach to life.",
+      "zh": "在感情中，CTRL型需要欣赏结构和清晰沟通的伴侣。他们与那些习惯计划、不介意更有条理的生活方式的人相处融洽。"
+    },
+    "growth": {
+      "en": ["Practice flexibility in plans", "Learn to trust others with tasks", "Embrace occasional spontaneity", "Develop patience with less structured individuals"],
+      "zh": ["练习在计划中保持灵活性", "学会信任他人完成任务", "偶尔拥抱自发性", "对不太有条理的人培养耐心"]
+    },
+    "emoji": "🎯",
+    "color": "#6366f1"
+  },
+  "BOSS": {
+    "code": "BOSS",
+    "cn": "领导者",
+    "intro": "方向盘给我，我来开。",
+    "desc": "BOSS是一个手里永远拿着方向盘的人。效率是他们的信仰，秩序是他们的呼吸。他们本身就是人形的气场发生器，方圆五米内，空气都会自动变得严肃而高效。",
+    "traits": ["天生的领导力", "决策果断", "目标清晰", "激励他人"],
+    "strengths": {
+      "en": ["Natural leadership presence", "Inspires and motivates others", "Clear vision and direction", "Confident decision-making", "Excellent at resource allocation"],
+      "zh": ["天生的领导气场", "激励和鼓舞他人", "清晰的愿景和方向", "自信的决策能力", "优秀的资源分配能力"]
+    },
+    "weaknesses": {
+      "en": ["May overlook others' emotional needs", "Can be intimidating", "Difficulty asking for help", "Tendency to dominate conversations"],
+      "zh": ["可能忽视他人的情感需求", "可能令人望而生畏", "难以寻求帮助", "倾向于主导对话"]
+    },
+    "careers": {
+      "en": ["Entrepreneur", "Senior Executive", "Military Officer", "Political Leader", "Sports Coach"],
+      "zh": ["创业者", "高级管理人员", "军官", "政治领袖", "体育教练"]
+    },
+    "relationships": {
+      "en": "BOSS types need partners who are independent yet supportive. They respect strength and capability in others and thrive in relationships where both parties can maintain their individuality.",
+      "zh": "BOSS型需要独立但支持性的伴侣。他们尊重他人的力量和能力，在双方都能保持个性的关系中茁壮成长。"
+    },
+    "growth": {
+      "en": ["Practice active listening", "Show vulnerability occasionally", "Recognize others' contributions", "Balance control with collaboration"],
+      "zh": ["练习积极倾听", "偶尔展示脆弱面", "认可他人的贡献", "平衡控制与合作"]
+    },
+    "emoji": "👑",
+    "color": "#8b5cf6"
+  },
+  "GOGO": {
+    "code": "GOGO",
+    "cn": "行者",
+    "intro": "gogogo~出发咯",
+    "desc": "GOGO活在一个极致的「所见即所得」世界里，人生信条简单粗暴。他们不是在「解决问题」，他们是在「清除待办事项」。对他们来说，世界上只有两种状态：已完成，和即将被我完成。",
+    "traits": ["行动派", "效率至上", "快速执行", "结果导向"],
+    "strengths": {
+      "en": ["Rapid execution of ideas", "High energy and motivation", "Problem-solving mindset", "Excellent in crisis situations", "Gets things done quickly"],
+      "zh": ["快速执行想法", "高能量和动力", "解决问题思维", "在危机情况下表现出色", "快速完成任务"]
+    },
+    "weaknesses": {
+      "en": ["May act without thinking", "Impatience with planning", "Can overlook details", "Difficulty with long-term strategy"],
+      "zh": ["可能未经思考就行动", "对计划缺乏耐心", "可能忽视细节", "难以制定长期战略"]
+    },
+    "careers": {
+      "en": ["Sales Representative", "Emergency Services", "Athlete", "Startup Founder", "Field Operations"],
+      "zh": ["销售代表", "紧急服务人员", "运动员", "创业公司创始人", "现场运营"]
+    },
+    "relationships": {
+      "en": "GOGO types need partners who can match their energy or appreciate their dynamism. They do well with people who are patient with their spontaneity and can provide grounding when needed.",
+      "zh": "GOGO型需要能匹配他们能量或欣赏他们活力的伴侣。他们与那些对他们的自发性有耐心、能在需要时提供稳定感的人相处得很好。"
+    },
+    "growth": {
+      "en": ["Practice thinking before acting", "Develop patience with slower processes", "Learn to plan ahead", "Value quality over speed sometimes"],
+      "zh": ["练习三思而后行", "对较慢的过程培养耐心", "学会提前规划", "有时重视质量胜过速度"]
+    },
+    "emoji": "🚀",
+    "color": "#06b6d4"
+  },
+  "MONK": {
+    "code": "MONK",
+    "cn": "僧人",
+    "intro": "没有那种世俗的欲望。",
+    "desc": "MONK已然看破红尘，不希望闲人来扰其清修。个人空间，是他们的结界，是他们的须弥山，是他们的绝对领域，神圣不可侵犯。",
+    "traits": ["内心平静", "独立自主", "深度思考", "界限分明"],
+    "strengths": {
+      "en": ["Deep inner peace", "Self-sufficient and independent", "Thoughtful and reflective", "Clear personal boundaries", "Calm under pressure"],
+      "zh": ["内心深处的平静", "自给自足和独立", "深思熟虑和反思", "清晰的个人界限", "压力下保持冷静"]
+    },
+    "weaknesses": {
+      "en": ["May seem emotionally distant", "Difficulty opening up to others", "Can be perceived as aloof", "Might isolate too much"],
+      "zh": ["可能显得情感疏离", "难以向他人敞开心扉", "可能被视为冷漠", "可能过度隔离"]
+    },
+    "careers": {
+      "en": ["Researcher", "Writer/Philosopher", "Meditation Instructor", "Librarian", "Remote Specialist"],
+      "zh": ["研究员", "作家/哲学家", "冥想教练", "图书管理员", "远程专家"]
+    },
+    "relationships": {
+      "en": "MONK types need partners who respect their need for solitude and personal space. They do best with independent individuals who don't require constant attention or validation.",
+      "zh": "MONK型需要尊重他们独处和个人空间需求的伴侣。他们与不需要持续关注或认可的独立个体相处最好。"
+    },
+    "growth": {
+      "en": ["Practice occasional social engagement", "Share thoughts with trusted others", "Balance solitude with connection", "Express emotions more openly"],
+      "zh": ["练习偶尔的社交参与", "与信任的人分享想法", "平衡独处与联系", "更开放地表达情感"]
+    },
+    "emoji": "🧘",
+    "color": "#a855f7"
+  },
+  "LOVE-R": {
+    "code": "LOVE-R",
+    "cn": "多情者",
+    "intro": "爱意太满，现实显得有点贫瘠。",
+    "desc": "您的情感处理器不是二进制的，而是彩虹制的。内心世界像一座永不关门的主题公园，一生都在寻找那个能看懂园区地图、并愿意陪你坐旋转木马直到宇宙尽头的灵魂伴侣。",
+    "traits": ["情感丰富", "浪漫主义", "深爱深付出", "渴望连接"],
+    "strengths": {
+      "en": ["Deep capacity for love", "Emotionally intuitive", "Creates meaningful connections", "Empathetic and understanding", "Brings passion to relationships"],
+      "zh": ["深厚的爱的能力", "情感直觉强", "建立有意义的连接", "富有同情心和理解力", "为关系带来激情"]
+    },
+    "weaknesses": {
+      "en": ["May love too quickly", "Vulnerable to heartbreak", "Can be overly idealistic", "Might neglect practical matters"],
+      "zh": ["可能太快坠入爱河", "容易心碎", "可能过于理想化", "可能忽视实际问题"]
+    },
+    "careers": {
+      "en": ["Counselor/Therapist", "Artist/Musician", "Relationship Coach", "Humanitarian Worker", "Writer/Poet"],
+      "zh": ["咨询师/治疗师", "艺术家/音乐家", "情感教练", "人道主义工作者", "作家/诗人"]
+    },
+    "relationships": {
+      "en": "LOVE-R types need partners who can match their emotional depth and appreciate their romantic nature. They thrive with individuals who are comfortable with vulnerability and deep emotional expression.",
+      "zh": "LOVE-R型需要能匹配他们情感深度并欣赏他们浪漫天性的伴侣。他们与那些对脆弱和深层情感表达感到舒适的人相处融洽。"
+    },
+    "growth": {
+      "en": ["Balance emotion with reason", "Take time to know partners deeply", "Maintain individual identity", "Set healthy relationship boundaries"],
+      "zh": ["平衡情感与理性", "花时间深入了解伴侣", "保持个人身份", "设定健康的关系界限"]
+    },
+    "emoji": "💕",
+    "color": "#ec4899"
+  },
+  "THAN-K": {
+    "code": "THAN-K",
+    "cn": "感恩者",
+    "intro": "我感谢苍天！我感谢大地！",
+    "desc": "THAN-K拥有温润如玉的性格和海纳百川的胸怀。他们眼中的世界没有完全的坏人，只有「尚未被感恩光芒照耀到的朋友」。拥有一个THAN-K朋友，就像身边多了一个永不枯竭的正能量发射塔。",
+    "traits": ["积极乐观", "感恩知足", "善良温暖", "正面思维"],
+    "strengths": {
+      "en": ["Infectious positivity", "Grateful for life's blessings", "Creates supportive environments", "Resilient in difficult times", "Inspires hope in others"],
+      "zh": ["有感染力的积极态度", "对生活中的恩赐心怀感激", "创造支持性环境", "在困难时期表现出韧性", "激励他人希望"]
+    },
+    "weaknesses": {
+      "en": ["May overlook negative realities", "Can be seen as naive", "Might suppress genuine concerns", "Difficulty with criticism"],
+      "zh": ["可能忽视负面现实", "可能被视为天真", "可能压抑真实担忧", "难以接受批评"]
+    },
+    "careers": {
+      "en": ["Teacher/Educator", "Non-profit Leader", "Life Coach", "Healthcare Worker", "Community Organizer"],
+      "zh": ["教师/教育工作者", "非营利组织领导者", "生活教练", "医疗工作者", "社区组织者"]
+    },
+    "relationships": {
+      "en": "THAN-K types need partners who appreciate their optimism and share their positive outlook. They do well with people who can provide reality checks when needed without dimming their light.",
+      "zh": "THAN-K型需要欣赏他们的乐观并分享他们积极态度的伴侣。他们与那些能在需要时提供现实检验而不熄灭他们光芒的人相处得很好。"
+    },
+    "growth": {
+      "en": ["Acknowledge difficult emotions", "Balance optimism with realism", "Accept constructive criticism", "Express needs more directly"],
+      "zh": ["承认困难的情绪", "平衡乐观与现实", "接受建设性批评", "更直接地表达需求"]
+    },
+    "emoji": "🙏",
+    "color": "#22c55e"
+  },
+  "OJBK": {
+    "code": "OJBK",
+    "cn": "无所谓人",
+    "intro": "我说随便，是真的随便。",
+    "desc": "这已经不是一种人格，而是一种统治哲学。OJBK人格，会用一种批阅奏章般的淡然，轻飘飘地吐出两个字：都行。这不是没主见，这是在告诉你：尔等凡俗的选择，于朕而言，皆为蝼蚁。",
+    "traits": ["随遇而安", "不强求", "适应力强", "低期望"],
+    "strengths": {
+      "en": ["Highly adaptable", "Low maintenance", "Goes with the flow", "Rarely stressed by decisions", "Easy to get along with"],
+      "zh": ["高度适应性强", "低维护成本", "顺其自然", "很少因决策而压力", "容易相处"]
+    },
+    "weaknesses": {
+      "en": ["May seem uninvested", "Can frustrate decision-makers", "Might avoid important choices", "Could miss opportunities"],
+      "zh": ["可能显得不投入", "可能让决策者沮丧", "可能逃避重要选择", "可能错过机会"]
+    },
+    "careers": {
+      "en": ["Freelancer", "Consultant", "Customer Service", "Research Assistant", "Content Moderator"],
+      "zh": ["自由职业者", "顾问", "客户服务", "研究助理", "内容审核员"]
+    },
+    "relationships": {
+      "en": "OJBK types need partners who can take the lead on decisions while appreciating their easygoing nature. They do well with decisive individuals who don't mind making choices.",
+      "zh": "OJBK型需要在决策上带头并欣赏他们随和天性的伴侣。他们与不介意做选择的果断个体相处得很好。"
+    },
+    "growth": {
+      "en": ["Practice expressing preferences", "Engage more in decision-making", "Identify personal priorities", "Take ownership of choices"],
+      "zh": ["练习表达偏好", "更多参与决策", "确定个人优先事项", "对选择承担责任"]
+    },
+    "emoji": "😎",
+    "color": "#f59e0b"
+  },
+  "SOLO": {
+    "code": "SOLO",
+    "cn": "孤儿",
+    "intro": "我哭了，我怎么会是孤儿？",
+    "desc": "孤儿的自我价值感偏低，因此有时主动疏远他人，在灵魂外围建起了一座名为「莫挨老子」的万里长城。那满身的尖刺不是攻击，那是一句句说不出口的「别过来，我怕你也受伤」。",
+    "traits": ["独立独行", "自我保护", "内心敏感", "渴望被理解"],
+    "strengths": {
+      "en": ["Highly self-reliant", "Deep self-awareness", "Independent problem solver", "Loyal to those who earn trust", "Observant and perceptive"],
+      "zh": ["高度自力更生", "深度自我认知", "独立解决问题", "对赢得信任的人忠诚", "观察敏锐"]
+    },
+    "weaknesses": {
+      "en": ["Difficulty trusting others", "Prone to isolation", "May push people away", "Struggles with vulnerability"],
+      "zh": ["难以信任他人", "容易孤立", "可能推开他人", "在脆弱方面挣扎"]
+    },
+    "careers": {
+      "en": ["Independent Contractor", "Researcher", "Artist", "IT Specialist", "Night-shift Worker"],
+      "zh": ["独立承包商", "研究员", "艺术家", "IT专家", "夜班工作者"]
+    },
+    "relationships": {
+      "en": "SOLO types need patient, understanding partners who can gently break through their walls. They thrive with consistent, trustworthy individuals who prove their reliability over time.",
+      "zh": "SOLO型需要耐心、理解的伴侣，能够温柔地突破他们的心墙。他们与随时间证明可靠性的可信赖个体茁壮成长。"
+    },
+    "growth": {
+      "en": ["Practice trusting in small steps", "Allow vulnerability gradually", "Communicate needs clearly", "Challenge self-isolating thoughts"],
+      "zh": ["小步练习信任", "逐渐允许脆弱", "清晰地沟通需求", "挑战自我孤立的思维"]
+    },
+    "emoji": "🌙",
+    "color": "#64748b"
+  },
+  "FAKE": {
+    "code": "FAKE",
+    "cn": "伪人",
+    "intro": "已经，没有人类了。",
+    "desc": "在社交场合，伪人是八面玲珑的存在，因为他们切换人格面具比切换手机输入法还快。夜深人静时，伪人把面具一层层摘下来，最后才发现，面具下空得很，正是这些面具构成了自己。",
+    "traits": ["社交变色龙", "适应性强", "多重面具", "内心空虚"],
+    "strengths": {
+      "en": ["Excellent social adaptability", "Can relate to many types of people", "Strong communication skills", "Flexible in various situations"],
+      "zh": ["出色的社交适应能力", "能与多种类型的人建立联系", "强大的沟通技巧", "在各种情况下灵活"]
+    },
+    "weaknesses": {
+      "en": ["May lose sense of true self", "Can be perceived as inauthentic", "Difficulty being alone", "Identity confusion"],
+      "zh": ["可能失去真实自我感", "可能被视为不真实", "难以独处", "身份困惑"]
+    },
+    "careers": {
+      "en": ["Sales", "Actor/Performer", "Diplomat", "Public Relations", "Event Coordinator"],
+      "zh": ["销售", "演员/表演者", "外交官", "公共关系", "活动协调员"]
+    },
+    "relationships": {
+      "en": "FAKE types need partners who accept them unconditionally and encourage authenticity. They thrive with people who create safe spaces for them to be their true selves.",
+      "zh": "FAKE型需要无条件接受他们并鼓励真实性的伴侣。他们与为他们创造安全空间做真实自己的人茁壮成长。"
+    },
+    "growth": {
+      "en": ["Explore your authentic self", "Reduce reliance on masks", "Practice vulnerability with trusted people", "Identify core values"],
+      "zh": ["探索真实的自我", "减少对面具的依赖", "与信任的人练习脆弱", "确定核心价值观"]
+    },
+    "emoji": "🎭",
+    "color": "#71717a"
+  },
+  "IMSB": {
+    "code": "IMSB",
+    "cn": "傻者",
+    "intro": "认真的么？我真的是傻逼么？",
+    "desc": "IMSB人格的大脑里住着两个不死不休的究极战士：一个叫「我他妈冲了！」，另一个叫「我是个傻逼！」。IMSB不是真的傻，只是内心戏可能比漫威宇宙所有电影加起来都长。",
+    "traits": ["自我怀疑", "内心戏剧", "冲动后懊悔", "自我调侃"],
+    "strengths": {
+      "en": ["Self-aware and reflective", "Can laugh at themselves", "Quick to admit mistakes", "Humble and approachable"],
+      "zh": ["自我认知和反思", "能自嘲", "快速承认错误", "谦逊平易近人"]
+    },
+    "weaknesses": {
+      "en": ["Excessive self-doubt", "Overthinking situations", "Low self-confidence", "May hesitate on opportunities"],
+      "zh": ["过度自我怀疑", "过度思考情况", "低自信", "可能对机会犹豫"]
+    },
+    "careers": {
+      "en": ["Creative Professional", "Quality Assurance", "Editor/Reviewer", "Customer Support", "Comedy/Entertainment"],
+      "zh": ["创意专业人士", "质量保证", "编辑/审稿人", "客户支持", "喜剧/娱乐"]
+    },
+    "relationships": {
+      "en": "IMSB types need partners who provide consistent reassurance and build their confidence. They do well with patient, supportive individuals who help them see their worth.",
+      "zh": "IMSB型需要提供持续安慰并建立他们信心的伴侣。他们与耐心、支持性的个体相处得很好，帮助他们看到自己的价值。"
+    },
+    "growth": {
+      "en": ["Practice self-compassion", "Challenge negative self-talk", "Celebrate small wins", "Trust your abilities more"],
+      "zh": ["练习自我同情", "挑战消极的自我对话", "庆祝小胜利", "更多地信任你的能力"]
+    },
+    "emoji": "🤡",
+    "color": "#fb923c"
+  }
+}

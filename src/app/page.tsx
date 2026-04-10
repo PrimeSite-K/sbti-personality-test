@@ -8,7 +8,9 @@ import ResultPage from '@/components/ResultPage'
 import { AdBanner } from '@/components/AdSense'
 import { useTranslation } from '@/lib/i18n'
 import questionsI18n from '@/data/questions-i18n.json'
+import questions60 from '@/data/questions-60.json'
 import personalityTypes from '@/data/personality-types.json'
+import personalityTypesEnhanced from '@/data/personality-types-enhanced.json'
 
 export default function Home() {
   const { t, locale } = useTranslation()
@@ -16,7 +18,8 @@ export default function Home() {
   const [answers, setAnswers] = useState<Record<string, number>>({})
   const [result, setResult] = useState<string | null>(null)
 
-  const questions = questionsI18n.questions
+  // 使用60题版本
+  const questions = questions60
 
   const calculateResult = (answers: Record<string, number>) => {
     const dimensions: Record<string, number> = {}

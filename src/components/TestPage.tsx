@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from '@/lib/i18n'
-import questionsI18n from '@/data/questions-i18n.json'
+import questions60 from '@/data/questions-60.json'
 
 interface TestPageProps {
   onComplete: (answers: Record<string, number>) => void
@@ -24,7 +24,7 @@ const dimensionLabels: Record<string, Record<string, string>> = {
   'Ac2': { en: 'Decisiveness', zh: '果断性', hi: 'निर्णायकता', ru: 'Решительность', ja: '決断力' },
   'Ac3': { en: 'Planning', zh: '计划性', hi: 'योजना', ru: 'Планирование', ja: '計画性' },
   'So1': { en: 'Openness', zh: '开放性', hi: 'खुलापन', ru: 'Открытость', ja: '開放性' },
-  'So2': { en: 'Intimacy', zh: '亲密度', zh: 'घनिष्ठता', ru: 'Близость', ja: '親密さ' },
+  'So2': { en: 'Intimacy', zh: '亲密度', hi: 'घनिष्ठता', ru: 'Близость', ja: '親密さ' },
   'So3': { en: 'Authenticity', zh: '真实性', hi: 'प्रामाणिकता', ru: 'Аутентичность', ja: '真実性' },
 }
 
@@ -33,7 +33,7 @@ export default function TestPage({ onComplete, onBack }: TestPageProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [answers, setAnswers] = useState<Record<string, number>>({})
 
-  const questions = questionsI18n.questions
+  const questions = questions60
   const currentQuestion = questions[currentIndex]
   const progress = ((currentIndex + 1) / questions.length) * 100
 
@@ -100,8 +100,8 @@ export default function TestPage({ onComplete, onBack }: TestPageProps) {
         </p>
       </div>
 
-      {/* Option buttons */}
-      <div className="space-y-3 relative z-30">
+      {/* Option buttons - 7点量表 */}
+      <div className="space-y-2 relative z-30">
         {currentQuestion.options.map((option, i) => (
           <button
             key={option.value}
@@ -114,22 +114,22 @@ export default function TestPage({ onComplete, onBack }: TestPageProps) {
               e.preventDefault()
               handleSelect(option.value)
             }}
-            className={`w-full p-4 rounded-xl text-left transition-all duration-200 border touch-manipulation
+            className={`w-full p-3 rounded-xl text-left transition-all duration-200 border touch-manipulation
               ${isSelected(option.value) 
                 ? 'bg-primary-600/40 border-primary-400 ring-2 ring-primary-500' 
                 : 'bg-primary-900/30 border-primary-700/30 hover:bg-primary-800/40 hover:border-primary-500/50 active:bg-primary-700/50'
               }`}
-            style={{ minHeight: '60px', WebkitTapHighlightColor: 'transparent' }}
+            style={{ minHeight: '50px', WebkitTapHighlightColor: 'transparent' }}
           >
             <div className="flex items-center gap-3">
-              <span className={`w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold shrink-0
+              <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shrink-0
                 ${isSelected(option.value) 
                   ? 'bg-primary-500 text-white' 
                   : 'bg-primary-800/50 text-gray-400'
                 }`}>
-                {String.fromCharCode(65 + i)}
+                {option.value}
               </span>
-              <span className="text-white text-base">{getText(option.label)}</span>
+              <span className="text-white text-sm">{getText(option.label)}</span>
             </div>
           </button>
         ))}
