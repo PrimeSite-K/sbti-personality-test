@@ -7,7 +7,7 @@ import TestPage from '@/components/TestPage'
 import ResultPage from '@/components/ResultPage'
 import { AdBanner } from '@/components/AdSense'
 import { useTranslation } from '@/lib/i18n'
-import questions from '@/data/questions.json'
+import questionsI18n from '@/data/questions-i18n.json'
 import personalityTypes from '@/data/personality-types.json'
 
 export default function Home() {
@@ -15,6 +15,8 @@ export default function Home() {
   const [stage, setStage] = useState<'home' | 'test' | 'result'>('home')
   const [answers, setAnswers] = useState<Record<string, number>>({})
   const [result, setResult] = useState<string | null>(null)
+
+  const questions = questionsI18n.questions
 
   const calculateResult = (answers: Record<string, number>) => {
     const dimensions: Record<string, number> = {}
