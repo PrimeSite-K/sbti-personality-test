@@ -1,6 +1,7 @@
 import Providers from './providers'
 import './globals.css'
 import type { Metadata } from 'next'
+import CookieConsent from '@/components/CookieConsent'
 
 export const metadata: Metadata = {
   title: 'SBTI Personality Test - Explore Your Inner World',
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
+        <CookieConsent />
       </body>
     </html>
   )

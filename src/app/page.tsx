@@ -142,6 +142,26 @@ export default function Home() {
             <div className="mt-12">
               <AdBanner format="horizontal" />
             </div>
+
+            {/* 免责声明和合规链接 */}
+            <div className="mt-12 pt-8 border-t border-primary-700/20">
+              <div className="max-w-4xl mx-auto text-center space-y-4">
+                <p className="text-sm text-gray-500">
+                  ⚠️ <strong>Disclaimer:</strong> This test is for entertainment purposes only. 
+                  It is not a scientific or clinical psychological assessment.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-600">
+                  <a href="/privacy" className="hover:text-gray-400 transition-colors">Privacy Policy</a>
+                  <span>•</span>
+                  <a href="/terms" className="hover:text-gray-400 transition-colors">Terms of Service</a>
+                  <span>•</span>
+                  <a href="/disclaimer" className="hover:text-gray-400 transition-colors">Disclaimer</a>
+                </div>
+                <p className="text-xs text-gray-600">
+                  Original content by 蛆肉儿串儿 (Bilibili UID: 417038183)
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </main>
