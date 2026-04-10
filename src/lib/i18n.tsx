@@ -208,6 +208,9 @@ export function I18nProvider({ children }: { children: ReactNode }) {
         if (key === 'question' && params) {
           return `Question ${params.current} of ${params.total}`
         }
+        if (key === 'prevQuestion') return 'Previous'
+        if (key === 'nextQuestion') return 'Next'
+        if (key === 'viewResult') return 'View Result'
         return key
       }
     }

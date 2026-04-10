@@ -26,6 +26,30 @@ export default function TestPage({ questions, onComplete, onBack }: TestPageProp
   const currentQuestion = questions[currentIndex]
   const progress = ((currentIndex + 1) / questions.length) * 100
 
+  // 维度标签映射
+  const dimensionLabels: Record<string, string> = {
+    'S1': 'Self-Worth (自我价值)',
+    'S2': 'Self-Awareness (自我认知)',
+    'S3': 'Self-Drive (自我驱动)',
+    'E1': 'Security (安全感)',
+    'E2': 'Emotional Investment (情感投入)',
+    'E3': 'Personal Space (个人空间)',
+    'A1': 'Trust (信任度)',
+    'A2': 'Conformity (规则性)',
+    'A3': 'Purpose (目标感)',
+    'Ac1': 'Achievement (成就导向)',
+    'Ac2': 'Decisiveness (果断性)',
+    'Ac3': 'Planning (计划性)',
+    'So1': 'Openness (开放性)',
+    'So2': 'Intimacy (亲密度)',
+    'So3': 'Authenticity (真实性)',
+  }
+
+  const getDimensionLabel = (dim: string | undefined) => {
+    if (!dim) return ''
+    return dimensionLabels[dim] || dim
+  }
+
   const handleSelect = (value: number) => {
     setAnswers(prev => ({
       ...prev,
@@ -96,8 +120,10 @@ export default function TestPage({ questions, onComplete, onBack }: TestPageProp
           className="mb-8"
         >
           <div className="glass-card p-6 mb-6">
-            <div className="text-xs text-primary-400 mb-3 font-mono">
-              {currentQuestion?.dim}
+            <div className="text-xs text-primary-400 mb-2 font-mono flex items-center gap-2">
+              <span className="font-bold">{currentQuestion?.dim}</span>
+              <span className="text-gray-400">|</span>
+              <span className="text-gray-300">{getDimensionLabel(currentQuestion?.dim)}</span>
             </div>
             <p className="text-lg leading-relaxed">
               {currentQuestion?.text}
