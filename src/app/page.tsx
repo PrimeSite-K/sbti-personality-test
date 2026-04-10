@@ -81,8 +81,13 @@ export default function Home() {
               </p>
               <button
                 type="button"
+                onTouchStart={(e) => {
+                  e.preventDefault()
+                  setStage('test')
+                }}
                 onClick={() => setStage('test')}
-                className="px-8 py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 transition-all cursor-pointer"
+                className="px-8 py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 active:from-primary-700 active:to-primary-800 transition-all cursor-pointer touch-manipulation"
+                style={{ minHeight: '60px', WebkitTapHighlightColor: 'transparent' }}
               >
                 {t('ui.startTest')} →
               </button>
