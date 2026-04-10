@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import TestPage from '@/components/TestPage'
 import ResultPage from '@/components/ResultPage'
@@ -53,108 +53,140 @@ export default function Home() {
     setStage('home')
   }
 
-  return (
-    <main className="relative min-h-screen">
-      {/* 背景粒子效果 - 不阻挡交互 */}
-      <div className="particles-bg pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <div key={i} className="particle" style={{
-            left: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 15}s`,
-            animationDuration: `${10 + Math.random() * 10}s`,
-          }} />
-        ))}
-      </div>
+  // 首页
+  if (stage === 'home') {
+    return (
+      <main className="relative min-h-screen">
+        {/* 导航栏 */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-600/80 backdrop-blur-xl border-b border-primary-700/20">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-purple-400">
+              SBTI
+            </h1>
+            <LanguageSwitcher />
+          </div>
+        </nav>
 
-      {/* 导航栏 */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-card rounded-none border-t-0 border-x-0">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <motion.h1 className="text-xl font-bold glow-text cursor-pointer" onClick={() => setStage('home')}>
-            SBTI
-          </motion.h1>
-          <LanguageSwitcher />
-        </div>
-      </nav>
+        {/* 主内容 */}
+        <div className="pt-24 pb-10 px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-primary-400 to-purple-400">
+                  {t('ui.title')}
+                </span>
+              </h2>
+              <p className="text-xl text-gray-400 mb-8">
+                {t('ui.subtitle')}
+              </p>
+              <button
+                type="button"
+                onClick={() => setStage('test')}
+                className="px-8 py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 transition-all cursor-pointer"
+              >
+                {t('ui.startTest')} →
+              </button>
+            </div>
 
-      {/* 主内容区 - 确保 z-index 高于背景 */}
-      <div className="relative z-10 pt-20 pb-10 px-6">
-        <AnimatePresence mode="wait">
-          {stage === 'home' && (
-            <motion.div key="home" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="max-w-4xl mx-auto">
-              <div className="flex flex-col lg:flex-row gap-8 items-center min-h-[70vh]">
-                <div className="flex-1 text-center lg:text-left">
-                  <motion.h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                    <span className="glow-text">{t('ui.title')}</span>
-                  </motion.h2>
-                  <motion.p className="text-xl text-gray-400 mb-8">
-                    {t('ui.subtitle')}
-                  </motion.p>
-                  <motion.button
-                    onClick={() => setStage('test')}
-                    className="glow-button px-8 py-4 rounded-xl text-lg font-semibold cursor-pointer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {t('ui.startTest')} →
-                  </motion.button>
-                </div>
-
-                <motion.div className="flex-1 max-w-md w-full">
-                  <div className="data-panel">
-                    <h3 className="text-lg font-semibold mb-4 text-primary-300">{t('ui.dimensions')}</h3>
-                    <div className="space-y-3">
-                      {['S', 'E', 'A', 'Ac', 'So'].map(dim => (
-                        <div key={dim} className="flex items-center justify-between">
-                          <span className="text-gray-300">{t(`dimensions.${dim}.name`)}</span>
-                          <div className="flex gap-1">
-                            {[1,2,3].map(n => <div key={n} className="w-8 h-2 rounded bg-primary-700/50" />)}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-6 pt-4 border-t border-primary-700/30">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-400">Questions</span>
-                        <span className="text-accent-cyan font-bold">30</span>
-                      </div>
-                      <div className="flex justify-between text-sm mt-2">
-                        <span className="text-gray-400">Personality Types</span>
-                        <span className="text-accent-purple font-bold">27</span>
-                      </div>
+            {/* 数据面板 */}
+            <div className="glass-card p-6 mb-12 max-w-md mx-auto">
+              <h3 className="text-lg font-semibold mb-4 text-primary-300">{t('ui.dimensions')}</h3>
+              <div className="space-y-3">
+                {['S', 'E', 'A', 'Ac', 'So'].map(dim => (
+                  <div key={dim} className="flex items-center justify-between">
+                    <span className="text-gray-300">{t(`dimensions.${dim}.name`)}</span>
+                    <div className="flex gap-1">
+                      {[1,2,3].map(n => <div key={n} className="w-8 h-2 rounded bg-primary-700/50" />)}
                     </div>
                   </div>
-                </motion.div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
-                {[
-                  { title: 'Scientific Assessment', desc: 'Multi-dimensional analysis based on psychology', icon: '🔬' },
-                  { title: 'Deep Insights', desc: 'Discover hidden personality traits', icon: '💡' },
-                  { title: 'Social Sharing', desc: 'Share your type with friends', icon: '🔗' },
-                ].map((card, i) => (
-                  <motion.div key={card.title} className="glass-card p-6 hover:border-primary-500/50 transition-all cursor-pointer" whileHover={{ y: -5 }}>
-                    <div className="text-3xl mb-3">{card.icon}</div>
-                    <h4 className="font-semibold text-lg mb-2">{card.title}</h4>
-                    <p className="text-gray-400 text-sm">{card.desc}</p>
-                  </motion.div>
                 ))}
               </div>
-            </motion.div>
-          )}
+              <div className="mt-6 pt-4 border-t border-primary-700/30">
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-400">Questions</span>
+                  <span className="text-cyan-400 font-bold">30</span>
+                </div>
+                <div className="flex justify-between text-sm mt-2">
+                  <span className="text-gray-400">Personality Types</span>
+                  <span className="text-purple-400 font-bold">27</span>
+                </div>
+              </div>
+            </div>
 
-          {stage === 'test' && (
-            <TestPage key="test" questions={questions} onComplete={handleComplete} onBack={() => setStage('home')} />
-          )}
+            {/* 功能卡片 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { title: 'Scientific Assessment', desc: 'Multi-dimensional analysis based on psychology', icon: '🔬' },
+                { title: 'Deep Insights', desc: 'Discover hidden personality traits', icon: '💡' },
+                { title: 'Social Sharing', desc: 'Share your type with friends', icon: '🔗' },
+              ].map((card) => (
+                <div key={card.title} className="glass-card p-6 hover:border-primary-500/50 transition-all">
+                  <div className="text-3xl mb-3">{card.icon}</div>
+                  <h4 className="font-semibold text-lg mb-2">{card.title}</h4>
+                  <p className="text-gray-400 text-sm">{card.desc}</p>
+                </div>
+              ))}
+            </div>
 
-          {stage === 'result' && result && (
-            <ResultPage key="result" typeCode={result} personalityTypes={personalityTypes} answers={answers} questions={questions} onRetake={handleRetake} />
-          )}
-        </AnimatePresence>
-
-        <div className="max-w-4xl mx-auto mt-12">
-          <AdBanner format="horizontal" />
+            {/* 广告 */}
+            <div className="mt-12">
+              <AdBanner format="horizontal" />
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
-  )
+      </main>
+    )
+  }
+
+  // 测试页
+  if (stage === 'test') {
+    return (
+      <main className="relative min-h-screen">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-600/80 backdrop-blur-xl border-b border-primary-700/20">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 
+              className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-purple-400 cursor-pointer"
+              onClick={() => setStage('home')}
+            >
+              SBTI
+            </h1>
+            <LanguageSwitcher />
+          </div>
+        </nav>
+        <div className="pt-24 pb-10 px-6">
+          <TestPage questions={questions} onComplete={handleComplete} onBack={() => setStage('home')} />
+        </div>
+      </main>
+    )
+  }
+
+  // 结果页
+  if (stage === 'result' && result) {
+    return (
+      <main className="relative min-h-screen">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-600/80 backdrop-blur-xl border-b border-primary-700/20">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 
+              className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-purple-400 cursor-pointer"
+              onClick={() => setStage('home')}
+            >
+              SBTI
+            </h1>
+            <LanguageSwitcher />
+          </div>
+        </nav>
+        <div className="pt-24 pb-10 px-6">
+          <ResultPage 
+            typeCode={result} 
+            personalityTypes={personalityTypes} 
+            answers={answers} 
+            questions={questions} 
+            onRetake={handleRetake} 
+          />
+        </div>
+      </main>
+    )
+  }
+
+  return null
 }

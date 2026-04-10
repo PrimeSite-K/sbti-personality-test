@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { useTranslation } from '@/lib/i18n'
 
 interface Question {
@@ -17,40 +17,34 @@ interface TestPageProps {
   onBack: () => void
 }
 
+const dimensionLabels: Record<string, string> = {
+  'S1': 'Self-Worth',
+  'S2': 'Self-Awareness',
+  'S3': 'Self-Drive',
+  'E1': 'Security',
+  'E2': 'Emotional Investment',
+  'E3': 'Personal Space',
+  'A1': 'Trust',
+  'A2': 'Conformity',
+  'A3': 'Purpose',
+  'Ac1': 'Achievement',
+  'Ac2': 'Decisiveness',
+  'Ac3': 'Planning',
+  'So1': 'Openness',
+  'So2': 'Intimacy',
+  'So3': 'Authenticity',
+}
+
 export default function TestPage({ questions, onComplete, onBack }: TestPageProps) {
   const { t } = useTranslation()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [answers, setAnswers] = useState<Record<string, number>>({})
-  const [direction, setDirection] = useState(0)
 
   const currentQuestion = questions[currentIndex]
   const progress = ((currentIndex + 1) / questions.length) * 100
 
-  // 维度标签映射
-  const dimensionLabels: Record<string, string> = {
-    'S1': 'Self-Worth (自我价值)',
-    'S2': 'Self-Awareness (自我认知)',
-    'S3': 'Self-Drive (自我驱动)',
-    'E1': 'Security (安全感)',
-    'E2': 'Emotional Investment (情感投入)',
-    'E3': 'Personal Space (个人空间)',
-    'A1': 'Trust (信任度)',
-    'A2': 'Conformity (规则性)',
-    'A3': 'Purpose (目标感)',
-    'Ac1': 'Achievement (成就导向)',
-    'Ac2': 'Decisiveness (果断性)',
-    'Ac3': 'Planning (计划性)',
-    'So1': 'Openness (开放性)',
-    'So2': 'Intimacy (亲密度)',
-    'So3': 'Authenticity (真实性)',
-  }
-
-  const getDimensionLabel = (dim: string | undefined) => {
-    if (!dim) return ''
-    return dimensionLabels[dim] || dim
-  }
-
   const handleSelect = (value: number) => {
+    console.log('Selected:', value, 'for question:', currentQuestion?.id)
     setAnswers(prev => ({
       ...prev,
       [currentQuestion.id]: value
@@ -59,7 +53,6 @@ export default function TestPage({ questions, onComplete, onBack }: TestPageProp
 
   const handleNext = () => {
     if (currentIndex < questions.length - 1) {
-      setDirection(1)
       setCurrentIndex(prev => prev + 1)
     } else {
       onComplete(answers)
@@ -68,117 +61,96 @@ export default function TestPage({ questions, onComplete, onBack }: TestPageProp
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setDirection(-1)
       setCurrentIndex(prev => prev - 1)
     }
   }
 
   const isSelected = (value: number) => answers[currentQuestion?.id] === value
 
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => ({
-      x: direction < 0 ? 300 : -300,
-      opacity: 0,
-    }),
+  if (!currentQuestion) {
+    return <div>Loading...</div>
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="relative z-20 max-w-2xl mx-auto">
       {/* 进度条 */}
       <div className="mb-8">
         <div className="flex justify-between text-sm text-gray-400 mb-2">
-          <span>{t('question', { current: currentIndex + 1, total: questions.length })}</span>
+          <span>Question {currentIndex + 1} of {questions.length}</span>
           <span>{Math.round(progress)}%</span>
         </div>
-        <div className="progress-bar">
+        <div className="h-2 bg-primary-800/50 rounded-full overflow-hidden">
           <motion.div 
-            className="progress-fill"
+            className="h-full bg-gradient-to-r from-cyan-400 to-purple-500"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
           />
         </div>
       </div>
 
-      {/* 题目区域 */}
-      <AnimatePresence mode="wait" custom={direction}>
-        <motion.div
-          key={currentQuestion?.id}
-          custom={direction}
-          variants={slideVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.3 }}
-          className="mb-8"
-        >
-          <div className="glass-card p-6 mb-6">
-            <div className="text-xs text-primary-400 mb-2 font-mono flex items-center gap-2">
-              <span className="font-bold">{currentQuestion?.dim}</span>
-              <span className="text-gray-400">|</span>
-              <span className="text-gray-300">{getDimensionLabel(currentQuestion?.dim)}</span>
-            </div>
-            <p className="text-lg leading-relaxed">
-              {currentQuestion?.text}
-            </p>
-          </div>
+      {/* 题目卡片 */}
+      <div className="glass-card p-6 mb-6 relative z-30">
+        <div className="text-xs text-primary-400 mb-3 font-mono">
+          {currentQuestion.dim} | {dimensionLabels[currentQuestion.dim] || currentQuestion.dim}
+        </div>
+        <p className="text-lg leading-relaxed text-white">
+          {currentQuestion.text}
+        </p>
+      </div>
 
-          {/* 选项 */}
-          <div className="space-y-3">
-            {currentQuestion?.options.map((option, i) => (
-              <button
-                key={option.value}
-                type="button"
-                onClick={() => handleSelect(option.value)}
-                className={`option-card w-full text-left ${isSelected(option.value) ? 'selected' : ''}`}
-              >
-                <div className="flex items-start gap-3">
-                  <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold
-                    ${isSelected(option.value) 
-                      ? 'bg-primary-500 text-white' 
-                      : 'bg-primary-800/50 text-gray-400'
-                    }`}>
-                    {String.fromCharCode(65 + i)}
-                  </span>
-                  <span className="flex-1 pt-1">{option.label}</span>
-                </div>
-              </button>
-            ))}
-          </div>
-        </motion.div>
-      </AnimatePresence>
+      {/* 选项按钮 */}
+      <div className="space-y-3 relative z-30">
+        {currentQuestion.options.map((option, i) => (
+          <button
+            key={option.value}
+            type="button"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              handleSelect(option.value)
+            }}
+            className={`w-full p-4 rounded-xl text-left transition-all duration-200 border
+              ${isSelected(option.value) 
+                ? 'bg-primary-600/40 border-primary-400 ring-2 ring-primary-500' 
+                : 'bg-primary-900/30 border-primary-700/30 hover:bg-primary-800/40 hover:border-primary-500/50'
+              }`}
+          >
+            <div className="flex items-center gap-3">
+              <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shrink-0
+                ${isSelected(option.value) 
+                  ? 'bg-primary-500 text-white' 
+                  : 'bg-primary-800/50 text-gray-400'
+                }`}>
+                {String.fromCharCode(65 + i)}
+              </span>
+              <span className="text-white">{option.label}</span>
+            </div>
+          </button>
+        ))}
+      </div>
 
       {/* 导航按钮 */}
-      <div className="flex justify-between gap-4">
-        <motion.button
+      <div className="flex justify-between gap-4 mt-8 relative z-30">
+        <button
+          type="button"
           onClick={currentIndex === 0 ? onBack : handlePrev}
-          className="px-6 py-3 rounded-xl glass-card hover:border-primary-500/50 transition-all"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
+          className="px-6 py-3 rounded-xl bg-primary-900/30 border border-primary-700/30 hover:bg-primary-800/40 transition-all"
         >
-          {currentIndex === 0 ? '← 返回' : t('prevQuestion')}
-        </motion.button>
+          {currentIndex === 0 ? '← Back' : '← Previous'}
+        </button>
 
-        <motion.button
+        <button
+          type="button"
           onClick={handleNext}
-          disabled={!answers[currentQuestion?.id]}
+          disabled={!answers[currentQuestion.id]}
           className={`px-8 py-3 rounded-xl font-semibold transition-all
-            ${answers[currentQuestion?.id]
-              ? 'glow-button'
-              : 'bg-primary-800/30 text-gray-500 cursor-not-allowed'
+            ${answers[currentQuestion.id]
+              ? 'bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 cursor-pointer'
+              : 'bg-primary-900/30 text-gray-500 cursor-not-allowed'
             }`}
-          whileHover={answers[currentQuestion?.id] ? { scale: 1.02 } : {}}
-          whileTap={answers[currentQuestion?.id] ? { scale: 0.98 } : {}}
         >
-          {currentIndex === questions.length - 1 ? t('viewResult') : t('nextQuestion')}
-        </motion.button>
+          {currentIndex === questions.length - 1 ? 'View Result →' : 'Next →'}
+        </button>
       </div>
     </div>
   )
